@@ -1,0 +1,187 @@
+.logo-div {
+        position: absolute;
+        top: 2dvh;
+        left: 2dvh;
+}
+
+.img {
+        width: 15%;
+        height: auto;
+}
+
+.login-main-container {
+        width: 100dvhw;
+        height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-x: auto;
+       
+}
+
+
+.login-right-cont {
+        width: clamp(480px, 45vw, 600px);
+        height: clamp(600px, 75vh, 800px);
+        display: grid;
+        grid-template-rows: 20% 15% 3% 30% 20%;
+        grid-template-columns: 100%;
+        align-content: center;
+        justify-items: center;
+        gap: 1dvh;
+
+        border-radius: 36px;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        box-shadow: 0px 0px 11px 4px rgb(233, 233, 233);
+        -webkit-box-shadow: 0px 0px 11px 4px rgb(233, 233, 233);
+        -moz-box-shadow: 0px 0px 11px 4px rgb(233, 233, 233);
+
+         transition: 0.5s ease-in;
+}
+
+.register-right-cont {
+        width: clamp(480px, 45vw, 600px);
+        height: clamp(600px, 75vh, 800px);
+        display: grid;
+        grid-template-rows: 10% 15% 5% 40% 20%;
+        grid-template-columns: 100%;
+        align-content: center;
+        justify-items: center;
+        gap: 10px;
+
+        border-radius: 36px;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        box-shadow: 0px 0px 11px 4px rgba(219, 219, 219, 1);
+        -webkit-box-shadow: 0px 0px 11px 4px rgba(219, 219, 219, 1);
+        -moz-box-shadow: 0px 0px 11px 4px rgba(219, 219, 219, 1);
+
+}
+
+.title-login-page {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: clamp(1rem, 1.5rem, 4rem);
+        font-weight: 600;
+}
+
+.opts-container-css {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: .4dvw;
+
+}
+
+.btn-opts-login {
+        width: 40%;
+        height: 55%;
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        text-align: center;
+        border-radius: 12px;
+        border: 1px solid rgba(128, 128, 128, 0.487);
+        background-color: rgb(255, 255, 255);
+        color: black;
+        cursor: pointer;
+}
+
+.opt-email-login {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2dvh;
+
+}
+
+.input-email {
+        width: 75%;
+        height: clamp(20%, 5.5vh, 70%);
+        min-height: 50px;
+        border: 1px solid rgba(128, 128, 128, 0.487);
+        background-color: white;
+        border-radius: 12px;
+        padding-left: 2dvw;
+        color: black;
+}
+
+
+.input-error {
+        width: 75%;
+        height: clamp(20%, 5.5vh, 70%);
+        min-height: 50px;
+        border: 2px solid rgb(253, 0, 0);
+        background-color: white;
+        border-radius: 12px;
+        padding-left: 2dvw;
+        color: black;
+}
+
+.error-warining {
+        width: 80%;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 12px;
+        color: red;
+}
+
+.bottom-signUp-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1dvh;
+}
+
+.btn-login {
+        width: 80%;
+        height: 40%;
+
+
+        border: none;
+        border-radius: 16px;
+
+        background-color: black;
+        color: white;
+        font-size: clmap(1.4rem, 2rem, 3rem);
+        cursor: pointer;
+}
+
+.span-login-container{
+        display: flex;
+        gap: 5px;
+        margin-top: 5px;
+        font-size: 12px;
+         font-weight: 300;
+}
+
+.btn-redirect-auth{
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+        .login-right-cont {
+                width: 350px;
+                height: 500px;
+                
+        }
+}

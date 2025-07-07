@@ -1,0 +1,64 @@
+.header-main-container{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+    background-color: red;
+}
+
+.left-info-header{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 5px ;
+}
+
+.center-header{
+    width: 70%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 32px;
+}
+
+
+@keyframes ShowLineBottomBtn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.btn-header{
+    width: fit-content;
+    height: fit-content;
+    padding: 4px 12px;
+
+    border: none;
+    background-color: transparent;
+    font-weight: 300;
+    transition: 0.2s ease-in;
+    animation: ShowLineBottomBtn 0.2 ease-in-out;
+}
+
+.btn-header:hover{
+    animation: ShowLineBottomBtn 0.2 ease-in-out;
+    border-bottom: 1px solid black;
+}
+
+.btn-login-header{
+    width: 120px;
+    height: 35px;
+
+    border-radius: 12px;
+    border:none;
+    background-color: black;
+    color: white;
+    font-weight: 300;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+}
+
+

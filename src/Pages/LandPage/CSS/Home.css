@@ -1,0 +1,364 @@
+/*Fonts here*/
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+
+* {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    overflow-y: none;
+    overflow-x: none;
+}
+
+
+.title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: clamp(2rem, 3.5vw, 5em);
+}
+
+.title-center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: clamp(1.5rem, 4vw, 3.7rem);
+}
+
+p {
+    font-size: clamp(0.8rem, 1.2vw, 3rem);
+    font-weight: 300;
+}
+
+
+.element-one {
+    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    margin-bottom: clamp(50px, 50vw, 70px);
+
+    text-align: left;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+}
+
+.element-one-children {
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+   
+    padding-top: 6.5rem;
+    padding-left: 20px;
+    background-color: transparent;
+
+    position: relative;
+    z-index: 1;
+}
+
+.element-three-children {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    width: 100%;
+    height: 50%;
+    padding-top: 1.5rem;
+    background-color: transparent;
+}
+
+
+
+.element-one-children-circle {
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    padding-top: 6.5rem;
+    padding-left: auto;
+
+    border: 2rem;
+}
+
+.breakpoint-Canvas{
+    position:relative;
+    width: 100%;
+    height: 90dvh;
+
+    background-color:transparent;
+    z-index: -2
+    
+}
+
+.breakpoint-Canvas-one{
+    position:relative;
+    width: 100%;
+    height: 20dvh;
+
+    background-color:transparent;
+    z-index: -2
+    
+}
+
+
+.element-two {
+    width: 100%;
+    height: 100dvh;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+
+
+}
+
+.element-two-children {
+    width: 80%;
+    height: clamp(5.5rem, 20vw, 10rem);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.services {
+    width: 100%;
+    height: clamp(7.5rem, 50vw, 8rem);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: auto;
+}
+
+.gtk-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+
+
+    margin: auto;
+    margin-top: 40px;
+    margin-left: -20px;
+
+    ;
+}
+
+.gtk-btn {
+    width: 180px;
+    height: clamp(.5rem, 20vw, 3.5rem);
+    color: White;
+    background-color: black;
+    border-radius: clamp(.9rem, 2vw, 1rem);
+    border-color: black;
+    border: 10px;
+
+    font-size: clamp(.9rem, 1.5vw, 1rem);
+}
+
+.gtk-btn:hover {
+    color: black;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid;
+    border-color: black;
+    box-shadow: 3px 10px 17px -5px rgba(0, 0, 0, 0.79);
+    -webkit-box-shadow: 3px 10px 17px -5px rgba(0, 0, 0, 0.79);
+    -moz-box-shadow: 3px 10px 17px -5px rgba(0, 0, 0, 0.79);
+    font-size: clamp(0.9rem, 0.9vw, 1.5rem);
+    font-weight: 500;
+
+    transition: 0.55s ease-in;
+    cursor: pointer;
+}
+
+.circle {
+    width: clamp(270px, 40vw, 900px);
+    height: clamp(270px, 40vw, 900px);
+
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    z-index: -2;
+}
+
+.slider {
+    background: rgb(255, 255, 255);
+    height: 100px;
+    margin-top: 0px;
+    justify-content: space-between;
+
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.slider::before,
+.slider::after {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+.slide-track {
+    animation: scroll 10s linear infinite;
+    display: flex;
+
+    width: calc(250px * 14);
+    /* Ajuste para o número de imagens */
+}
+
+.slide {
+    height: 100px;
+    width: 250px;
+}
+
+#space {
+    margin-top: 30px;
+
+}
+
+#red {
+    color: red;
+}
+
+#blue {
+    color: rgba(28, 103, 245, 1);
+}
+
+#green {
+    color: rgba(17, 200, 0, 1)
+}
+
+#background-red {
+    background-color: red;
+}
+
+#background-blue {
+    background-color: rgba(28, 103, 245, 1);
+}
+
+
+#background-green {
+    background-color: rgba(17, 200, 0, 1)
+}
+
+#reverse {
+    flex-direction: row-reverse;
+}
+
+#center {
+
+    justify-content: center;
+    text-align: center;
+
+
+    margin-bottom: 5.5rem;
+
+}
+
+#padin-zero {
+    padding-left: 0;
+}
+
+#padin-not0 {
+    padding-left: 20px;
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-250px * 7));
+    }
+}
+
+
+@media only screen and (min-width: 600px) {
+    .element-one {
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+
+        margin-top: clamp(20px, 10vw, 50px);
+    }
+
+    .element-one-children {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+
+    }
+
+    .element-one-children-circle {
+
+        align-items: center;
+        justify-content: center;
+        padding-top: 0;
+        padding-left: auto;
+
+        border: 2rem;
+    }
+
+    .element-two {
+        width: 100%;
+        height: auto;
+    }
+
+    .services {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-top: clamp(0.5rem, 2.5vw, 10rem);
+        margin-bottom: clamp(0.5rem, 7.5vw, 10rem);
+    }
+
+}
