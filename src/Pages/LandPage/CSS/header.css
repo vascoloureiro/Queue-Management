@@ -3,8 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    
-    background-color: red;
+    margin-top: 5px;
 }
 
 .left-info-header{
@@ -13,6 +12,7 @@
     align-items: center;
     justify-content: space-evenly;
     padding: 5px ;
+    gap:5px;
 }
 
 .center-header{
@@ -22,37 +22,28 @@
     font-size: 32px;
 }
 
-
-@keyframes ShowLineBottomBtn {
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
-}
 .btn-header{
-    width: fit-content;
-    height: fit-content;
-    padding: 4px 12px;
+    width: 150px;
+    height: 35px;
+    padding: 4px 18px;
 
     border: none;
-    background-color: transparent;
+    background-color: white;
     font-weight: 300;
     transition: 0.2s ease-in;
-    animation: ShowLineBottomBtn 0.2 ease-in-out;
+    cursor: pointer;
 }
 
 .btn-header:hover{
-    animation: ShowLineBottomBtn 0.2 ease-in-out;
-    border-bottom: 1px solid black;
+   
+    font-weight: 500;
 }
 
 .btn-login-header{
-    width: 120px;
+    width: 150px;
     height: 35px;
 
-    border-radius: 12px;
+    border-radius: 6px;
     border:none;
     background-color: black;
     color: white;

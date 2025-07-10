@@ -11,7 +11,7 @@ import HomeIndex from './Pages/LandPage/HomeIndex';
 import { AppProvider } from './Context/Appcontext';
 import LoginPage from './Pages/Autenticacao/loginPage';
 
-
+import './index.css'
 const root = createRoot(document.getElementById('root'));
 
 const appRouter= createBrowserRouter([

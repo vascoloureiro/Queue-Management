@@ -41,7 +41,7 @@ export default function LoginPage() {
     return (
         <>
             <div className='logo-div'>
-                <img src="/resources/logo.png" className="img" />
+                <img src="./resources/logo.png" className="img" />
             </div>
             <div className='login-main-container'>
                 <div className='login-right-cont'>

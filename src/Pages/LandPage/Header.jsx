@@ -63,9 +63,9 @@ const Header = () => {
                 </div>
 
                 <div className='left-info-header'>
-                    <button className='btn-header'>ST-Queue</button>
-                    <button className='btn-header'>AD-Queue</button>
-                    <button className='btn-header'>You-Queue</button>
+                    <button className='btn-header'>ST:Queue</button>
+                    <button className='btn-header'>AD:Queue</button>
+                    <button className='btn-header'>Y:Queue</button>
                     <button 
                         className='btn-login-header'
                         onClick={()=>{

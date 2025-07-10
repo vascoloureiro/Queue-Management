@@ -1,139 +1,75 @@
-/*Fonts here*/
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
-
-* {
-    position: relative;
-    padding: 0;
-    margin: 0;
-    overflow-y: none;
-    overflow-x: none;
-}
-
-
-.title {
+.container-main {
     width: 100%;
-    display: flex;
-    align-items: center;
-    font-size: clamp(2rem, 3.5vw, 5em);
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    place-items: center;
 }
 
-.title-center {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    font-size: clamp(1.5rem, 4vw, 3.7rem);
-}
-
-p {
-    font-size: clamp(0.8rem, 1.2vw, 3rem);
-    font-weight: 300;
-}
-
-
-.element-one {
-    
+.sub-container-main {
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
     flex-direction: column;
-
-    margin-bottom: clamp(50px, 50vw, 70px);
-
-    text-align: left;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    
-}
-
-.element-one-children {
-    width: 100%;
-    height: 50%;
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-
-   
-    padding-top: 6.5rem;
-    padding-left: 20px;
-    background-color: transparent;
-
-    position: relative;
-    z-index: 1;
-}
-
-.element-three-children {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-
-    width: 100%;
-    height: 50%;
-    padding-top: 1.5rem;
-    background-color: transparent;
-}
-
-
-
-.element-one-children-circle {
-    width: 100%;
-    height: 50%;
-
-    display: flex;
-    align-items: center;
     justify-content: center;
+    gap:20px;
+    padding-left: 50px;
+  
+}
+
+.sub-container-main-right{
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-direction: column;
+ 
+    padding-left: 20px;
+    background-color: rgb(20, 194, 113);
 
-    padding-top: 6.5rem;
-    padding-left: auto;
-
-    border: 2rem;
 }
 
-.breakpoint-Canvas{
-    position:relative;
-    width: 100%;
-    height: 90dvh;
-
-    background-color:transparent;
-    z-index: -2
-    
+.title {
+   font-size: 54px;
 }
 
-.breakpoint-Canvas-one{
-    position:relative;
-    width: 100%;
-    height: 20dvh;
+.gtk-btn {
+    width: fit-content;
+    height: fit-content;
 
-    background-color:transparent;
-    z-index: -2
-    
+    border:none;
+    border-radius: 12px;
+    padding: 14px 28px;
+    align-self: center;
+
+    background-color: black;
+    color: white;
+    transition: 0.25s ease-in;
+     cursor: pointer;
+}
+
+.gtk-btn:hover {
+    color: black;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
 }
 
 
-.element-two {
+.container-main-horizontal {
     width: 100%;
-    height: 100dvh;
-    position: relative;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     text-align: center;
     flex-wrap: wrap;
-
-
 }
 
-.element-two-children {
+.container-main-horizontal-children{
     width: 80%;
-    height: clamp(5.5rem, 20vw, 10rem);
-
+ 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,11 +77,11 @@ p {
 
     text-align: center;
     margin-bottom: 0;
+    background-color: blue;
 }
 
 .services {
     width: 100%;
-    height: clamp(7.5rem, 50vw, 8rem);
 
     display: flex;
     flex-direction: column;
@@ -155,46 +91,15 @@ p {
     margin-bottom: auto;
 }
 
-.gtk-box {
+.content-description-container{
     width: 100%;
+    height: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    flex-wrap: nowrap;
-
-
-    margin: auto;
-    margin-top: 40px;
-    margin-left: -20px;
-
-    ;
-}
-
-.gtk-btn {
-    width: 180px;
-    height: clamp(.5rem, 20vw, 3.5rem);
-    color: White;
-    background-color: black;
-    border-radius: clamp(.9rem, 2vw, 1rem);
-    border-color: black;
-    border: 10px;
-
-    font-size: clamp(.9rem, 1.5vw, 1rem);
-}
-
-.gtk-btn:hover {
-    color: black;
-    background-color: rgb(255, 255, 255);
-    border: 2px solid;
-    border-color: black;
-    box-shadow: 3px 10px 17px -5px rgba(0, 0, 0, 0.79);
-    -webkit-box-shadow: 3px 10px 17px -5px rgba(0, 0, 0, 0.79);
-    -moz-box-shadow: 3px 10px 17px -5px rgba(0, 0, 0, 0.79);
-    font-size: clamp(0.9rem, 0.9vw, 1.5rem);
-    font-weight: 500;
-
-    transition: 0.55s ease-in;
-    cursor: pointer;
+    gap:20px;
+    padding-left: 50px;
+  
 }
 
 .circle {
@@ -260,32 +165,33 @@ p {
 
 }
 
-#red {
+/* Colors */
+.red {
     color: red;
 }
 
-#blue {
+.blue {
     color: rgba(28, 103, 245, 1);
 }
 
-#green {
+.green {
     color: rgba(17, 200, 0, 1)
 }
 
-#background-red {
+.background-red {
     background-color: red;
 }
 
-#background-blue {
+.background-blue {
     background-color: rgba(28, 103, 245, 1);
 }
 
 
-#background-green {
+.background-green {
     background-color: rgba(17, 200, 0, 1)
 }
 
-#reverse {
+.reverse {
     flex-direction: row-reverse;
 }
 

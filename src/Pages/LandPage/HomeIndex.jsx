@@ -10,24 +10,25 @@ import { IoQrCodeSharp } from "react-icons/io5";
 export default function HomeIndex() {
     return (<>
         <Header />
-        <div className="element-one" id="one">
-            <div className="element-one-children">
-                <h1 className="title" id="red">Queue</h1>
-                <h1 className="title">Management</h1>
-                <p>We improve yout custom expirence</p>
-                <div className="gtk-box">
-                    <button className="gtk-btn" >Get To Know Us</button>
-                </div>
+        <div className="container-main" >
+            <div className="sub-container-main">
+                <span><h1 className='title red'>Queue</h1><h1 className='title'>Manager</h1></span>
+                <p>We inovate bla bla bla bla blabla bla blabla bla bla bla bla</p>
+                <button
+                    className='gtk-btn'
+
+                >Get to Know us</button>
             </div>
 
-            <div className="element-one-children-circle">
+
+            <div className="sub-container-main-right">
                 <div className="circle">
                 </div>
             </div>
         </div>
 
-        <div className="element-two">
-            <div className="element-two-children">
+        <div className="container-main-horizontal">
+            <div className="ontainer-main-horizontal">
                 <h1 className="title-center">How we improve customer service</h1>
             </div>
             <div className="services" >
@@ -52,35 +53,52 @@ export default function HomeIndex() {
                 </div>
             </div>
         </div>
-        
-        <section id="changeAnimation">
-            <div className="element-one">
-                <div className="element-three-children" id="padin-not0">
-                    <h1 className="title">
-                        <span id="blue">AD:</span>
-                        <span >Queue</span>
-                    </h1>
-                    <div id="space">
-                        <p>Qube is a smart queue management system that swiftly organizes services’  waiting lines. Remarkably adaptable to services where time is priceless  and must have a quick and efficient response.</p>
-                        <p>A smart solution to elevate the service experience to a whole new level.</p>
-                    </div>
-                    <div className="gtk-box">
-                        <button className="gtk-btn">Know More</button>
-                    </div>
-                </div>
 
-                <div className="element-one-children-circle">
-                    {/* <div className="circle" id="background-blue">
-                       
-                    </div> */}
+        <div className="container-main">
+            <div className="sub-container-main">
+                <span><h1 className='title blue'>AD</h1><h1 className='title'>Queue</h1></span>
+                <p>Qube is a smart queue management system that swiftly organizes services’  waiting lines. Remarkably adaptable to services where time is priceless  and must have a quick and efficient response.</p>
+                <p>A smart solution to elevate the service experience to a whole new level.</p>
+
+                <button className="gtk-btn">Know More</button>
+            </div>
+
+            <div className="element-one-children-circle">
+                <div className="circle" id="background-blue">
+
                 </div>
             </div>
-        </section>
-
-        <div className="breakpoint-Canvas-one">
         </div>
 
-        <section id="changeAnimation2">
+        <div className=".container-main">
+            <div className="sub-container-main-right">
+                <div className="circle">
+
+                </div>
+            </div>
+            <div className="sub-container-main" >
+                <span><h1 className='title red'>ST</h1><h1 className='title'>Queue</h1></span>
+                <p>Qube is a smart queue management system that swiftly organizes services’  waiting lines. Remarkably adaptable to services where time is priceless  and must have a quick and efficient response.</p>
+                <p>A smart solution to elevate the service experience to a whole new level.</p>
+
+                <button className="gtk-btn">Know More</button>
+            </div>
+        </div>
+
+
+        <Footer />
+    </>)
+}
+
+/*
+
+
+        
+       
+      
+      
+
+        <div id="changeAnimation2">
             <div className="element-one">
                 <div className="element-one-children-circle">
                     <div className="circle">
@@ -100,7 +118,7 @@ export default function HomeIndex() {
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
         <section id="changeModel">
             <div className="element-one">
@@ -123,7 +141,7 @@ export default function HomeIndex() {
                 <div className="element-one-children-circle">
                     {/*<div className="circle" id="background-red">
                             <h1>A</h1>
-                        </div>*/}
+                        </div>*
                 </div>
             </div>
         </section>
@@ -186,7 +204,4 @@ export default function HomeIndex() {
         </div>
 
         <div className="element-one">
-        </div>
-    <Footer />
-</>)
-}
+        </div> /*/
