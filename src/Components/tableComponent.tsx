@@ -5,11 +5,9 @@ import { useState } from 'react';
 import './CSS/tableComponent.css';
 
 interface TableComponentProps {
-    tableTitle?: string;
     filterOptions?: string[];
     tableHeaders: string[];
     tableContent: { [key: string]: string }[];
-
 }
 
 export default function TableComponent({

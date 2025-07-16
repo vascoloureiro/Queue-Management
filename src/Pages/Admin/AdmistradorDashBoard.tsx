@@ -5,6 +5,10 @@ import { useParams } from 'react-router-dom';
 // Components
 import SideBarDash from '../../Components/SideBar.tsx';
 
+// Modules
+import Statistics from './ModulesAdmin/Afluency/Afluency.tsx';
+import TitleDashBoard from '../../Components/TitleDashBoard.tsx';
+
 /* import { AdminContext } from '../Context/Admin/AdminContext.jsx';
 import Afluencia from './Components/Afluencia.jsx';
 import Gestao from './Components/Gestao.jsx';
@@ -30,8 +34,7 @@ import { LiaQrcodeSolid } from 'react-icons/lia';
 import { FaPeopleGroup } from 'react-icons/fa6';
 import { GoHome, GoPeople } from 'react-icons/go';
 import { PiBuilding, PiChartLine } from 'react-icons/pi';
-import Statistics from './ModulesAdmin/Afluency/Afluency.tsx';
-import TitleDashBoard from '../../Components/TitleDashBoard.tsx';
+import Reports from './ModulesAdmin/Reports/Reports.tsx';
 
 
 
@@ -47,21 +50,12 @@ export default function DashBoardAdminSystem() {
 
     const [openSubDivion, setOpenSubDivion] = useState<boolean>(false);
     const [selectedInfo, setSelectedInfo] = useState<string>('');
-    const [selectedComponent, setSelectedComponent] = useState<string>('');
+    const [selectedComponent, setSelectedComponent] = useState<string>('Afluency');
 
 
     // const
     // For SideBar
     const topOptions = [
-
-        {
-            label: 'Statistisc',
-            icon: <PiChartLine size={22} color={selectedComponent === 'afluency' ? 'black' : '#757575'} />,
-            onClick: () => {
-                setSelectedInfo('afluency')
-                setSelectedComponent('Afluency')
-            }
-        },
         {
             label: 'Manage',
             icon: <GoHome size={22} color={selectedComponent === 'Manage' ? 'black' : '#757575'} />,
@@ -91,7 +85,7 @@ export default function DashBoardAdminSystem() {
                     label: 'Counter',
                     icon: <FiCornerDownRight size={12} color={selectedComponent === 'counter' ? 'black' : '#757575'} />,
                     onClick: () => {
-                       
+
                         setSelectedInfo('counter')
                         setSelectedComponent('Counter')
                     },
@@ -99,8 +93,16 @@ export default function DashBoardAdminSystem() {
             ]
         },
         {
+            label: 'Statistisc',
+            icon: <PiChartLine size={22} color={selectedComponent === 'afluency' ? 'black' : '#757575'} />,
+            onClick: () => {
+                setSelectedInfo('afluency')
+                setSelectedComponent('Afluency')
+            }
+        },
+        {
             label: 'Reports',
-            icon: <TbReportAnalytics size={22} color={selectedComponent === 'reports' ? 'black' : '#757575'} />,
+            icon: <TbReportAnalytics size={22} color={selectedComponent === 'Reports' ? 'black' : '#757575'} />,
             onClick: () => {
                 setSelectedInfo('reports')
                 setSelectedComponent('Reports')
@@ -140,9 +142,9 @@ export default function DashBoardAdminSystem() {
             case 'Shedule':
                 return;
             case 'Reports':
-                return;
+                return <Reports />;
             default:
-                return;
+                return <Statistics />;
         }
     }
 

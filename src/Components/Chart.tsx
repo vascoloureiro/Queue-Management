@@ -64,7 +64,6 @@ export default function ChartComponent({
     return (
         <div style={{ width: '95%', height: '400px', gap:'5px'}}>
             <h3>{titleGraph}</h3>
-            
             <ReactChart
                 options={{
                     data: chartData,

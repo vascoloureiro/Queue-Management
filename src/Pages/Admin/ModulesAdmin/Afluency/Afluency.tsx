@@ -1,9 +1,11 @@
-
-//Styles
+// React
 import { useContext } from 'react';
+
+// Components
 import ChartComponent from '../../../../Components/Chart.tsx';
 import SquareInfoDash from '../../../../Components/SquareInfo.tsx';
-import TitleDashBoard from '../../../../Components/TitleDashBoard.tsx';
+
+//Styles
 import './afluency.css'
 import { IoTrendingUp, IoTrendingDownOutline } from "react-icons/io5";
 import { AdminContext } from '../../../../Context/AdimSystemContext.tsx';

@@ -1,0 +1,17 @@
+.main-container-btn-placer{
+    width: 100%;
+    height: fit-content;
+    margin-left: 14px;
+}
+
+.left-container-btn-placer{
+    display: flex;
+      justify-content: flex-start;
+}
+
+.right-container-btn-placer{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 15px;
+ background-color: transparent;
+}
