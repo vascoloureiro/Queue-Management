@@ -1,176 +1,27 @@
-h1{
-    font-size:clamp(1.5rem,2.5vw,3rem);
-}
 
-
-h4{
-    font-size:clamp(0.4rem,1.3vw,0.8rem);
-    font-weight: 300;
-}
-
-.main {
+.main-container {
     width: 100%;
     height: 100dvh;
-
+    min-height: 500px;
     display:grid;
     grid-template-columns: 15% 85%;
-    column-gap: clamp(5px, 1.5vw, 10px);
-
-
+    
     overflow-x: hidden;
-    overflow-y: hidden;
-
-
-    background:
-    conic-gradient(
-        from 180deg at 50% 63.43%,
-        #756ced91 0deg, rgba(218, 123, 125, 0.304) 85.86deg,#fac8c8cc 0deg,
-         rgba(239, 239, 239, 0.075) 170.8deg
-         ,#e3eaf8 240deg,  #756ced91 340deg);
+    overflow-y: auto;
 }
 
-
-.side-bar{
-    width: 100%;
-    min-width: 100px;
-    height: 100%;
-    display: grid;
-    grid-template-rows:10% 20% 50% 10%;
-    grid-template-columns: 100%;
-    border-radius:0px 20px 20px 0px;
-    row-gap: 5px;
-
-    background-color:rgba(160, 160, 160, 0.34);
-    
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(7.7px);
-    -webkit-backdrop-filter: blur(8.7px);
-    border: 1px solid rgba(146, 146, 146, 0.492);
-    z-index:1;
-}
-.sidebar-span{
-    margin-left: 5px;
-}
-
-.ad-title{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    border-bottom: 1px solid rgb(206, 206, 206);
-}
-
-.sdB-main-opt{
-    width:auto;
-    height: 100%;
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    flex-direction: column;
-    margin-left: 5px;
-   
-    background-color: transparent;
-}
-
-.sidebar-footer{
-    width:50%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    margin-top: clamp(20px, 4.5vw, 50px);
-    margin-left: clamp(20px, 7.5vw, 60px);
-    background-color: transparent;
-
-}
-.sidebar-footer-log-out {
-    width: 100%;
-    height: 100%;
-    margin-top: 35px;
-    padding-left: 9vw;
-}
-
-.btn-logOut{
-    width: 70%;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: none;
-background-color: transparent;
-    
-}
-.btn-bx {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: transparent;
-}
-
-.btn-dash {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 10px;
-    font-size:clamp(0.5rem,2.5vw,1.15rem);
-    font-weight: 200;
-    position: relative;
-    transition: background-color 1s ease;
-    background-color: transparent;
-    border:none;
-}
-
-.bx {
-    width: 0%;
-    height: 100%;
-    display: inline-block;
-    border-radius: 5px;
-    overflow: hidden;
-    transition: width 1.5s ease-in-out;
-    background-color: black;
-}
-
-.btn-dash:hover .bx, .btn-dash.active .bx {
-   
-    width: 50%;
-    display: flex;
-    justify-items: flex-start;
-    margin-left: 0px;
-    margin-right: 10px;
-    background-color: black;
-    font-weight: 600;
-}
-
-.btn-dash:hover , .btn-dash.active {
-    font-weight: 600;
-    margin-left: -10px;
-    background-color: transparent;
-}
-
-.btn-dash div {
-    transition: transform 0.5s ease;
-}
-
-.btn-dash:hover div:nth-child(2) {
-    transform: translateX(10px);
-}
-
+    .admin{
+        background: #e3eaf88a ;
+    }
 
 .dash-main{
-    width: 100%;
-    min-width: 900px;
+    width: 98%;
     height: 100%;
 
     display: grid;
-    grid-template-rows: 7% 22% 70%;
-    row-gap: 10px;
+    grid-template-rows: 10% 87%;
+    gap: 0px;
     background-color: transparent ;
-   
-   
-    z-index:1;
 }
 
 .dash-menu{

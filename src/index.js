@@ -1,3 +1,4 @@
+// React
 import React from 'react';
 import {ReactDOM, createRoot} from 'react-dom/client';
 import {
@@ -8,10 +9,18 @@ import {
 
 import reportWebVitals from './reportWebVitals';
 import HomeIndex from './Pages/LandPage/HomeIndex';
-import { AppProvider } from './Context/Appcontext';
-import LoginPage from './Pages/Autenticacao/loginPage';
 
+// Context
+import { AppProvider } from './Context/Appcontext.tsx';
+
+// Components
+import LoginPage from './Pages/Autenticacao/loginPage.tsx';
+import SignUpPage from './Pages/Autenticacao/SignUpPage.tsx';
+import DashBoardAdminSystem from './Pages/Admin/AdmistradorDashBoard.tsx';
+
+// Styles
 import './index.css'
+
 const root = createRoot(document.getElementById('root'));
 
 const appRouter= createBrowserRouter([
@@ -22,6 +31,14 @@ const appRouter= createBrowserRouter([
   {
     path: 'login',
     element: <LoginPage />
+  },
+  {
+    path: 'signup',
+    element: <SignUpPage />
+  },
+  {
+    path: '/dashboard/admin',
+    element: <DashBoardAdminSystem />
   },
   
 ])

@@ -2,41 +2,36 @@ import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 //Context
-import { AuthContext } from '../../Context/AuthContext';
 
 // Styles
 import './CSS/login.css'
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
+import { AuthContext } from '../../Context/AuthContext.tsx';
 
 export default function LoginPage() {
 
     const navigate = useNavigate();
     const id_user = localStorage.getItem("user_id")
-    const {
-        setMakeLogin,
-        setEmail, setPassword,
-        isAuthenticated, setIsAuthenticated,
-        authLog, setAuthLog,
-        loginError, setLoginError,
-    } = useContext(AuthContext);
+    
+    const Auth = useContext(AuthContext);
 
 
     useEffect(() => {
 
-        if (isAuthenticated) {
+        if (Auth?.isAuthenticated) {
             navigate(`/dashboard/user/${id_user}`);
-            setAuthLog('');
-            setLoginError(false);
+            Auth?.setAuthLog('');
+            Auth?.setLoginError(false);
 
-        } else if (authLog !== '') {
+        } else if (Auth?.authLog !== '') {
 
-            alert(authLog);
-            setAuthLog('');
-            setLoginError(true);
+            alert(Auth?.authLog);
+            Auth?.setAuthLog('');
+            Auth?.setLoginError(true);
         }
 
-    }, [isAuthenticated]);
+    }, [Auth?.isAuthenticated]);
 
     return (
         <>
@@ -67,30 +62,30 @@ export default function LoginPage() {
 
                     <div className='opt-email-login'>
                         <input
-                            className={loginError ? ('input-error') : ('input-email')}
+                            className={Auth?.loginError ? ('input-error') : ('input-email')}
                             type='email'
                             placeholder='Email'
-                            onChange={(e) => setEmail(e.target.value)}
-                            onFocus={() => setLoginError(false)}
+                            onChange={(e) => Auth?.setEmail(e.target.value)}
+                            onFocus={() => Auth?.setLoginError(false)}
                         />
                         <input
-                            className={loginError ? ('input-error') : ('input-email')}
+                            className={Auth?.loginError ? ('input-error') : ('input-email')}
                             type='password'
                             placeholder='Password'
-                            onChange={(e) => setPassword(e.target.value)}
-                            onFocus={() => setLoginError(false)}
+                            onChange={(e) => Auth?.setPassword(e.target.value)}
+                            onFocus={() => Auth?.setLoginError(false)}
                         />
-                        {loginError && <p className='error-warining'>Credenciais Inválidas</p>}
+                        {Auth?.loginError && <p className='error-warining'>Credenciais Inválidas</p>}
                     </div>
 
                     <div className='bottom-signUp-container'>
-                        <button className='btn-login' onClick={() => setMakeLogin(true)}>
+                        <button className='btn-login' onClick={() => Auth?.setMakeLogin(true)}>
                             Login
                         </button>
                         <span className='span-login-container'>
                             Don´t have an account yet?
                             <button className='btn-redirect-auth'
-                                onClick={() => navigate('/registo')}
+                                onClick={() => navigate('/signup')}
                             >Sign up here</button>
                         </span>
                     </div>

@@ -1,35 +1,29 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import '../Login/login.css';
+import './CSS/login.css';
 
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
-
-import { AuthContext } from '../../../Context/AuthContext';
+import { AuthContext } from '../../Context/AuthContext.tsx';
 
 export default function SignUpPage() {
+    
     const navigate = useNavigate();
-    const [tryRegister, setTryRegister] = useState(false);
-    const {
-        makeRegister, setMakeRegister,
-        setEmail_Reg,
-        password_reg, setPassword_reg,
-        confirmPassword_reg, setConfirmPassword_reg,
-        setNomeUtilizador
-    } = useContext(AuthContext)
+    const [tryRegister, setTryRegister] = useState<boolean>(false);
+    
+    const Auth = useContext(AuthContext)
  
     useEffect(() => {
-
-        if (tryRegister)
-        {
-            if (password_reg === confirmPassword_reg) {
-                console.log('password igual')
-                setMakeRegister(true);
+            if (Auth?.password_reg === Auth?.confirmPassword_reg) {
+                Auth?.setMakeRegister(true);
                 setTryRegister(!tryRegister)
+                
             }
-        }
-    }, [password_reg,confirmPassword_reg, tryRegister])
+      
+    }, [Auth?.password_reg, Auth?.confirmPassword_reg, tryRegister])
+
+
 
     return (<>
        <div className='logo-div'>
@@ -54,16 +48,16 @@ export default function SignUpPage() {
                 <div className='opt-email-login'>
 
                     <input className="input-email" type='email' placeholder='Nome Utilizador'
-                        onChange={(e) => setNomeUtilizador(e.target.value)}
+                        onChange={(e) => Auth?.setNomeUtilizador(e.target.value)}
                     />
                     <input className="input-email" type='email' placeholder='Email'
-                        onChange={(e) => setEmail_Reg(e.target.value)}
+                        onChange={(e) => Auth?.setEmail_Reg(e.target.value)}
                     />
                     <input className="input-email" type='password' placeholder='Password'
-                        onChange={(e) => setPassword_reg(e.target.value)}
+                        onChange={(e) => Auth?.setPassword_reg(e.target.value)}
                     />
                     <input className="input-email" type='password' placeholder='Confirmar Password'
-                        onChange={(e) => setConfirmPassword_reg(e.target.value)}
+                        onChange={(e) => Auth?.setConfirmPassword_reg(e.target.value)}
                     />
                 </div>
 

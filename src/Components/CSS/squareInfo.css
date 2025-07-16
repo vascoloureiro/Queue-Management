@@ -1,0 +1,112 @@
+
+.dash-squares-container{
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-rows: 10%  80%;
+    row-gap:5px;
+}
+
+.square-main-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    border-radius: 12px;
+    background: rgba(248, 207, 207, 0.658) ;
+}
+
+.title-square-info{
+    padding: 4px 8px;
+    margin-top: 5px;
+    background-color: transparent;
+}
+
+.value-square-info{
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.container-square-info-footer{
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 300;
+   
+}
+
+    .percentage-value-span{
+        margin-left: 8px;
+        gap: 6px;
+    }
+
+    .green{
+        color: green;
+    }
+
+    .red{
+        color: rgb(216, 1, 1);
+    }
+    /*Para a Dash Cointainer*/
+    .tl-box{
+        width: 30%;
+        height: 2rem;
+
+        margin-top: 2px;
+    }
+
+    .squares-bx{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(4,24%);
+        column-gap: clamp(2px, 1.2vw, 130px);
+        align-items: center;
+        justify-items: flex-start;
+      
+        margin-top: 15px;
+
+    }
+        /*Os Quadrados*/
+        .square-one{
+            width:  90%;
+            height: 100%;
+
+            display: grid;
+            grid-template-rows: 20% 45% 20%;
+            row-gap: clamp(2px, 2.5vw, 5px);
+            
+            align-items: flex-start;
+            justify-items: center;
+
+            margin-right: 10px;
+
+            background-color:rgba(160, 160, 160, 0.442);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5.7px);
+            -webkit-backdrop-filter: blur(8.7px);
+            border: 1px solid rgba(146, 146, 146, 0.334);
+        }
+        .square-one-footer{
+            justify-content:space-between;
+        }
+        .square-one > div {
+            width: 80%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            margin-top:clamp(2px, 2.5vw, 5px);
+        }

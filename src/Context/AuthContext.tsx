@@ -1,30 +1,38 @@
-import React, { createContext, useState, useEffect, useRef } from 'react';
+import React, {
+  createContext,
+  useState,
+  useEffect,
+  ReactNode
+} from 'react';
 
-export const AuthContext = createContext();
+import { AuthContextType } from './types/AuthContextTypes.ts';
 
-export function AuthProvider({ children }) {
+export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-  //const url = "https://mckapi.onrender.com"
-  const url = 'http://localhost:3000';
+interface AuthProviderProps {
+  children: ReactNode;
+}
+
+export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   
-  // Login
+  const url = 'http://localhost:3001';
+
+  // Estados
   const [makeLogin, setMakeLogin] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // Registo
   const [makeRegister, setMakeRegister] = useState(false);
   const [email_reg, setEmail_Reg] = useState('');
   const [password_reg, setPassword_reg] = useState('');
   const [confirmPassword_reg, setConfirmPassword_reg] = useState('');
   const [nome_utilizador, setNomeUtilizador] = useState('');
 
-  // estados de autenticação Login
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loginError, setLoginError] = useState(false);
   const [authLog, setAuthLog] = useState('');
 
-  const doLogin = async (email, password) => {
+  const doLogin = async (email: string, password: string) => {
     if (!email || !password) return;
 
     try {
@@ -34,34 +42,32 @@ export function AuthProvider({ children }) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          email_utilizador: email,
-          password_utilizador: password
+          email_user: email,
+          password_user: password
         })
       });
 
       const data = await response.json();
 
-      if (response.status === 200) {
-        localStorage.setItem("token", data.token[0]);
-        localStorage.setItem("user_id", data.token[1]);
+      if (response.ok) {
         setIsAuthenticated(true);
-        setAuthLog("Login efetuado com sucesso!");
-
+        setLoginError(false);
+        setAuthLog("Login bem-sucedido");
       } else {
-        setAuthLog("Erro inesperado no login.");
         setLoginError(true);
+        setAuthLog("Credenciais inválidas");
         console.error("Erro na autenticação:", data.message);
       }
     } catch (ex) {
       setLoginError(true);
+      setAuthLog("Erro na conexão");
       console.error("Login erro: ", ex);
     }
   };
 
-
-  const doRegister = async(nome_utilizador, email, password) =>{
+  const doRegister = async (nome_utilizador: string, email: string, password: string) => {
     if (!email || !password || !nome_utilizador) return;
-   
+
     try {
       const response = await fetch(`${url}/api/v1/register`, {
         method: "POST",
@@ -69,65 +75,57 @@ export function AuthProvider({ children }) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          nome_utilizador: nome_utilizador,
-          email_utilizador: email,
-          password_utilizador: password
+          name_user: nome_utilizador,
+          email_user: email,
+          password_user: password
         })
       });
 
       const data = await response.json();
 
-      if (response.status === 200) {
-        console.log("Autenticado");
-        setIsAuthenticated(true);
-        localStorage.setItem("token", data.token);
+      if (response.ok) {
+        setAuthLog("Registo efetuado com sucesso");
       } else {
-       
+        setAuthLog("Erro no registo");
         console.error("Erro no registo:", data.message);
       }
-
     } catch (ex) {
-      console.error("Login erro: ", ex);
+      setAuthLog("Erro na conexão");
+      console.error("Erro no registo: ", ex);
     }
-  }
+  };
 
   useEffect(() => {
     if (makeLogin) {
       doLogin(email, password);
       setMakeLogin(false);
     }
-  }, [email, password, makeLogin])
+  }, [email, password, makeLogin]);
 
-  useEffect(()=>{
-    if(makeRegister)
-    {
-      console.log(' a ir para o registo. Parm:');
-      console.log(nome_utilizador, email_reg, password_reg)
+  useEffect(() => {
+    if (makeRegister) {
       doRegister(nome_utilizador, email_reg, password_reg);
-      setMakeRegister(!makeRegister);
+      setMakeRegister(false);
     }
-  },[makeRegister, nome_utilizador, email_reg, password_reg]);
+  }, [makeRegister, nome_utilizador, email_reg, password_reg]);
 
   return (
     <AuthContext.Provider value={{
       makeLogin, setMakeLogin,
       email, setEmail,
       password, setPassword,
-
-
       makeRegister, setMakeRegister,
       email_reg, setEmail_Reg,
       password_reg, setPassword_reg,
       confirmPassword_reg, setConfirmPassword_reg,
       nome_utilizador, setNomeUtilizador,
-      
-      // estados de autenticação Login
       isAuthenticated, setIsAuthenticated,
       loginError, setLoginError,
-      authLog, setAuthLog
+      authLog, setAuthLog,
+      doLogin,
+      doRegister
     }}>
       {children}
     </AuthContext.Provider>
-
-  )
-}
+  );
+};
