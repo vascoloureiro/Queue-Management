@@ -1,7 +1,7 @@
 
 // Components
 import Btn_SubMenu from "../../../../Components/btn-subMenu.tsx";
-import DinamicBtnPlacer from "../../../../Components/dinamicBtnOrder.tsx";
+import DinamicBtnPlacer from "../../../../Components/DinamicBtnPlacer.tsx";
 import TableComponent from "../../../../Components/tableComponent.tsx";
 import TitleDashBoard from "../../../../Components/TitleDashBoard.tsx";
 
@@ -9,6 +9,7 @@ import TitleDashBoard from "../../../../Components/TitleDashBoard.tsx";
 import './reports.css'
 import '../module.css'
 import { IoIosArrowDown } from "react-icons/io";
+import { BsFiletypePdf } from "react-icons/bs";
 
 export default function Reports() {
 
@@ -27,12 +28,19 @@ export default function Reports() {
             <TableComponent
                 tableContent={[
                     {
+                        icon: <BsFiletypePdf size={22} />,
+                        month: 'May',
+                        description: 'Report of the analysist of the month may',
+                        download: 'Donwload'
+                    },
+                      {
+                        icon: <BsFiletypePdf size={22} />,
                         month: 'May',
                         description: 'Report of the analysist of the month may',
                         download: 'Donwload'
                     }
                 ]}
-                tableHeaders={['Month', 'Description', 'Download']}
+                tableHeaders={['Icon', 'Month', 'Description', 'Download']}
             />
         </div>
     </>)

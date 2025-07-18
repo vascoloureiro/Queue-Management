@@ -20,6 +20,7 @@ import DashBoardAdminSystem from './Pages/Admin/AdmistradorDashBoard.tsx';
 
 // Styles
 import './index.css'
+import DashBoardStaffSystem from './Pages/Staff/dashboard_staff.tsx';
 
 const root = createRoot(document.getElementById('root'));
 
@@ -39,6 +40,10 @@ const appRouter= createBrowserRouter([
   {
     path: '/dashboard/admin',
     element: <DashBoardAdminSystem />
+  },
+  {
+    path: '/dashboard/staff',
+    element: <DashBoardStaffSystem />
   },
   
 ])

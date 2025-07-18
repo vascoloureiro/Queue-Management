@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 // Styles
 import './CSS/tableComponent.css';
+import { LuDownload } from "react-icons/lu";
 
 interface TableComponentProps {
     filterOptions?: string[];
@@ -30,7 +31,11 @@ export default function TableComponent({
                         <tr>
                             {tableHeaders.map((header, id) => (
                                 <th key={id} className='th-header-encomendas'>
-                                    {header === 'Img' ? 'Imagem Produto' : header}
+                                    {
+                                        header === 'Img' && ('Imagem Produto') ||
+                                        header === 'Icon' && ('') ||
+                                        header
+                                    }
                                 </th>
                             ))}
                         </tr>
@@ -72,8 +77,8 @@ export default function TableComponent({
                                                 </div>
                                             )}
 
-                                            {key === 'estado' && typeof value === 'string' && (
-                                                <button className={`btn-estado-encomenda ${value.toLowerCase()}`}>
+                                            {key === 'working' && typeof value === 'string' && (
+                                                <button className={`btn-estado ${value.toLowerCase()}`}>
                                                     {value}
                                                 </button>
                                             )}
@@ -107,12 +112,26 @@ export default function TableComponent({
                                                 />
                                             )}
 
+                                            
+                                            {key === 'download' && (
+                                                <button
+                                                    className='btn-inside-table icon'
+                                                    onClick={() => {
+                                                        setDescriptionInfo(value);
+                                                        toggleModalDescription();
+                                                    }}
+                                                >
+                                                    <LuDownload size={22} />
+                                                </button>
+                                            )}
+
                                             {/* Campos comuns */}
                                             {key !== 'descricao' &&
                                                 key !== 'cores' &&
                                                 key !== 'img' &&
-                                                key !== 'estado' &&
+                                                key !== 'working' &&
                                                 key !== 'escolher' &&
+                                                key !== 'download' &&
                                                 value}
                                         </td>
                                     );

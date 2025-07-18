@@ -35,6 +35,9 @@ import { FaPeopleGroup } from 'react-icons/fa6';
 import { GoHome, GoPeople } from 'react-icons/go';
 import { PiBuilding, PiChartLine } from 'react-icons/pi';
 import Reports from './ModulesAdmin/Reports/Reports.tsx';
+import Staff from './ModulesAdmin/Staff/Staff.tsx';
+import QrCodes from './ModulesAdmin/QrCode/QrCode.tsx';
+import Counter from './ModulesAdmin/Counter/Counter.tsx';
 
 
 
@@ -67,7 +70,7 @@ export default function DashBoardAdminSystem() {
             hasSubOptions: [
                 {
                     label: 'Staff',
-                    icon: <FiCornerDownRight size={12} color={selectedComponent === 'staff' ? 'black' : '#757575'} />,
+                    icon: <FiCornerDownRight size={12} color={selectedComponent === 'Staff' ? 'black' : '#757575'} />,
                     onClick: () => {
                         setSelectedInfo('staff')
                         setSelectedComponent('Staff')
@@ -134,11 +137,11 @@ export default function DashBoardAdminSystem() {
             case 'Afluency':
                 return <Statistics />;
             case 'Staff':
-                return;
+                return <Staff />;
             case 'Counter':
-                return;
+                return <Counter />;
             case 'Qrcodes':
-                return;
+                return <QrCodes />;
             case 'Shedule':
                 return;
             case 'Reports':
@@ -164,18 +167,6 @@ export default function DashBoardAdminSystem() {
         };
 
     }, []);
-
-
-    // Efeito para observar o id e defenir o Id do admistrador caso não seja nulo
-    /*     useEffect(() => {
-            if(id){
-                console.log(id)
-                setIdReceive(id);
-            }
-        }, [id, setIdReceive])
-         */
-
-
 
     return (<>
         {isMobile ? (
